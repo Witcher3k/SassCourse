@@ -21,7 +21,7 @@
         padding-left: 6rem;
     }
     transform: skewY(-7deg);
-    &>*{
+    & > *{
         transform: skewY(7deg);
     };
 }
