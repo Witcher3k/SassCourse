@@ -1,0 +1,27 @@
+// .row{
+//     max-width: $grid-width;
+//     background-color: #eee;
+//     margin: 0 auto;
+//     display: flex;
+//     justify-content: space-between;
+    
+//     &:not(:last-child){ //everything except last child
+//         margin-bottom: $gutter-vertical;
+//     }
+
+//     [class^="col-"]{
+//         &:not(:last-child){
+//             margin-right: $gutter-horizontal;
+//         }
+//         background-color: orangered;
+//     }
+//     .col-1-of-2{
+//         width: calc(50%);
+//         background-color: orangered;
+      
+//     }
+//     .col-1-of-3{
+//         width: 33.33%;
+        
+//     }
+// }
