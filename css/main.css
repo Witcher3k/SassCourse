@@ -433,6 +433,12 @@ body {
   transition: all .2s;
 }
 
+@media (max-width: 1199px) {
+  .feature-box {
+    margin-top: 3rem;
+  }
+}
+
 .feature-box__icon {
   font-size: 6rem;
   margin-bottom: .5rem;
