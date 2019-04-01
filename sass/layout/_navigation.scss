@@ -1,8 +1,9 @@
 .navigation {
-    &__checkobox{
+    &__checkobox {
         display: none;
     }
-    &__button{
+
+    &__button {
         background-color: $color-white;
         height: 7rem;
         width: 7rem;
@@ -11,118 +12,147 @@
         right: 6rem;
         border-radius: 50%;
         z-index: 2000;
-        box-shadow:  0 1rem 3rem rgba($color-black, .1);
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
         display: flex;
         align-items: center;
         justify-content: center;
-        
-        &:hover{
+
+        @include respond(tab-port) {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        &:hover {
             cursor: pointer;
-            .navigation__icon::after{
-                top: 1rem;  
+
+            .navigation__icon::after {
+                top: 1rem;
             }
-            .navigation__icon::before{
-                top:-1rem;
+
+            .navigation__icon::before {
+                top: -1rem;
             }
         }
     }
-    &__background{
+
+    &__background {
         height: 6rem;
         width: 6rem;
         border-radius: 50%;
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        background-image: radial-gradient($color-primary-light,$color-primary-dark);
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
-        transition:transform .8s cubic-bezier(0.85,0,0.07,1);
+        transition: transform .8s cubic-bezier(0.85, 0, 0.07, 1);
+
+        @include respond(tab-port) {
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+
     }
-    &__nav{
+
+    &__nav {
         height: 100vh;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 1500;
-        opacity:0;
+        opacity: 0;
         width: 0;
-        transition: all .8s cubic-bezier(0.68,-0.55,0.265,1.55);
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
-    &__list{
+
+    &__list {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         list-style: none;
         text-align: center;
     }
-    &__item{
+
+    &__item {
         margin: 1rem;
 
     }
-    &__link{
+
+    &__link {
+
         &:link,
-        &:visited{
+        &:visited {
             display: block;
             font-size: 3rem;
             font-weight: 300;
-            padding:  1rem 2rem;
+            padding: 1rem 2rem;
             color: $color-white;
             text-decoration: none;
             text-transform: uppercase;
-            background-image: linear-gradient(120deg,transparent 0%,transparent 50%,$color-white 50%);
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
             background-size: 240%;
             transition: all .4s;
         }
+
         &:hover,
-        &:active{
+        &:active {
             background-position: 100%;
             color: $color-primary;
             // transform: translateX(1rem);
         }
     }
-    &__checkobox:checked ~ &__background{
+
+    &__checkobox:checked~&__background {
         transform: scale(80);
     }
-    &__checkobox:checked ~ &__nav{
+
+    &__checkobox:checked~&__nav {
         opacity: 1;
         width: 100%;
     }
-    &__checkobox:checked + &__button &__icon{
+
+    &__checkobox:checked+&__button &__icon {
         background-color: transparent;
     }
-    &__checkobox:checked + &__button &__icon::before{
+
+    &__checkobox:checked+&__button &__icon::before {
         top: 0;
         transform: rotate(45deg);
     }
-    &__checkobox:checked + &__button &__icon::after{
+
+    &__checkobox:checked+&__button &__icon::after {
         top: 0;
         transform: rotate(-45deg);
     }
 
     //ICON
-    &__icon{
+    &__icon {
         position: relative;
+
         &,
         &::before,
-        &::after{
+        &::after {
             width: 3rem;
             height: 2px;
             background-color: $color-grey-dark-2;
             display: inline-block;
             transition: all .2s;
-         }
-         &::before,
-         &::after{
-             content: "";
-             position: absolute;
-             left: 0;
-         }
-         &::before{
-             
-             top: -.8rem;
-         }
-         &::after{
-             top: .8rem;
-         }
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        &::before {
+
+            top: -.8rem;
+        }
+
+        &::after {
+            top: .8rem;
+        }
     }
 }
