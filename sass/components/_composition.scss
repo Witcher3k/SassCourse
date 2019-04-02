@@ -1,33 +1,59 @@
-.composition{
-    position: relative;
-    &__photo{
-        width: 55%;
-        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
-        border-radius: 2px;
-        position: absolute;
-        z-index: 1;
-        transition: all .2s;
-        outline-offset: 2rem;
-        &--p1{
-            left: 0;
-            top: -2rem; 
-        }
-        &--p2{
-            right: 0;
-            top: 2rem; 
-        }
-        &--p3{
-            left: 20%;
-            top:10rem;
-        }
-        &:hover{
-            outline: 1.5rem solid $color-primary;
-            transform: scale(1.05) translateY(-.5rem);
-            box-shadow: 0 2.5rem 4rem rgba($color-black, .4);
-            z-index: 20;
-        }
+.composition {
+  position: relative;
+  @media (max-width: 1199px) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    @include respond(phone){
+        flex-direction: column;
     }
-    &:hover &__photo:not(:hover) {
-        transform: scale(.9);
+  }
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1;
+    transition: all 0.2s;
+    outline-offset: 2rem;
+    &--p1 {
+      left: 0;
+      top: -2rem;
     }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+    &:hover {
+      outline: 1.5rem solid $color-primary;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.4);
+      z-index: 20;
+      @media (max-width: 1199px) {
+        outline: none;
+      }
+    }
+   
+    @media (max-width: 1199px) {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 33.33%;
+      margin: 0 .5rem;
+    }
+     @include respond(phone){
+        margin: 1rem 0rem;
+        width: 90%;
+    }
+    
+  }
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
 }
