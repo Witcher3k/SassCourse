@@ -21,6 +21,10 @@
             top: 4rem;
             right: 4rem;
         }
+        @include respond(phone){
+            top: 2rem;
+            right: 2rem;
+        }
 
         &:hover {
             cursor: pointer;
@@ -49,6 +53,10 @@
         @include respond(tab-port) {
             top: 4.5rem;
             right: 4.5rem;
+        }
+        @include respond(phone){
+            top:2.5rem;
+            right: 2.5rem;
         }
 
     }
